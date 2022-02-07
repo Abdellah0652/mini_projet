@@ -4,15 +4,20 @@
  <h1>login</h1>
  <form action="" method="post">
      {%csrf_token%}
-     <label for=""> enter ur name </label>
+          <label for=""> enter ur firstname </label>
+     <input type="text" name="firstname"><br>
+          <label for=""> enter lastname </label>
+     <input type="text" name="lastname"><br>
+     <label for=""> User </label>
      <input type="text" name="name"><br>
      <label for=""> enter ur email </label>
-     <input type="email" name="name"><br>
+     <input type="email" name="email"><br>
      <label for=""> enter ur your passwoord </label>
      <input type="password" name="password"><br>
-     <input type="submit" value="login">
+     <label for=""> confirm  passwoord </label>
+     <input type="password" name="confirm_password"><br>
+     <input type="submit" value="register">
      <br>
-     <p>if don't have account click <a href="">here</a></p>
  </form>
 
 {%endblock%}

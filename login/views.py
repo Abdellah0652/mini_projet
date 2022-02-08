@@ -50,9 +50,6 @@ def register(request):
                     user.save()
                     messages.success(request, 'You are registered successfully.')
                     return redirect('dashboard')
-
-
-                    return redirect('login')
         else:
             messages.error(request, 'Password do not match')
             return redirect('register')

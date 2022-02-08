@@ -22,8 +22,11 @@ def login(request):
             return redirect('login')
     return render(request, 'accounts/login.html')
 
+
 def dashboard(request):
-    return render(request,'accounts/dashboard.html')
+    tab=[]
+    return render(request, 'accounts/dashboard.html',tab)
+
 
 def register(request):
     if request.method == 'POST':

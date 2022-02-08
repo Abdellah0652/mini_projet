@@ -47,9 +47,11 @@ def register(request):
                                                     username=username, password=password)
                     auth.login(request, user)
                     messages.success(request, 'You are now logged in.')
-                    return redirect('dashboard')
                     user.save()
                     messages.success(request, 'You are registered successfully.')
+                    return redirect('dashboard')
+
+
                     return redirect('login')
         else:
             messages.error(request, 'Password do not match')

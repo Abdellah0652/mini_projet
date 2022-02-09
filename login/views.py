@@ -33,7 +33,7 @@ def dashboard_1(request):
     return render(request, 'accounts/dashboard.html',tab)
 
 
-def dashboard_2(request):
+def dashboard_22(request):
     tab=[]
     return render(request, 'accounts/dashboard.html',tab)
 

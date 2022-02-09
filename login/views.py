@@ -28,6 +28,16 @@ def dashboard(request):
     return render(request, 'accounts/dashboard.html',tab)
 
 
+def dashboard_1(request):
+    tab=[]
+    return render(request, 'accounts/dashboard.html',tab)
+
+
+def dashboard_2(request):
+    tab=[]
+    return render(request, 'accounts/dashboard.html',tab)
+
+
 def register(request):
     if request.method == 'POST':
         firstname = request.POST['firstname']

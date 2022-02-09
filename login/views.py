@@ -28,14 +28,6 @@ def dashboard(request):
     return render(request, 'accounts/dashboard.html',tab)
 
 
-def dashboard_1(request):
-    tab=[]
-    return render(request, 'accounts/dashboard.html',tab)
-
-
-def dashboard_22(request):
-    tab=[]
-    return render(request, 'accounts/dashboard.html',tab)
 
 
 def register(request):

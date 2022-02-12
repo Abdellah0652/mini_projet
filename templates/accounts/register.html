@@ -2,7 +2,7 @@
 {%block content%}
 
  <h1>login</h1>
- <form action="{%url 'register'%}" method="post">
+ <form action="{%url 'register'%}" method="POST">
      {%csrf_token%}
           <label for=""> enter ur firstname </label>
      <input type="text" name="firstname"><br>

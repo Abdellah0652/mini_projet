@@ -2,15 +2,15 @@
 {%block content%}
 
  <h1>login</h1>
- <form action="" method="post">
-     {%csrf_token%}
+ <form action="{% url 'login'%}" method="POST">
+     {% csrf_token %}
      <label for=""> enter ur name </label>
      <input type="text" name="name"><br>
      <label for=""> enter ur your passwoord </label>
      <input type="password" name="password"><br>
      <input type="submit" value="login">
      <br>
-     <p>if don't have account click <a href="">here</a></p>
+     <p>if don't have account click <a href="{% url 'register'%}">here</a></p>
  </form>
 
 {%endblock%}

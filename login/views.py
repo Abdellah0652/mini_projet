@@ -1,9 +1,10 @@
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
 # Create your views here.
-from pyexpat.errors import messages
+from django.contrib import messages, auth
 
 
 def login(request):
@@ -18,19 +19,13 @@ def login(request):
             messages.success(request, 'You are now logged in.')
             return redirect('dashboard')
         else:
-            messages.error(request, 'Invalid login credentials')
             return redirect('login')
     return render(request, 'accounts/login.html')
 
 
-def dashboard(request):
-    tab=[]
-    return render(request, 'accounts/dashboard.html',tab)
-
-
-
 
 def register(request):
+
     if request.method == 'POST':
         firstname = request.POST['firstname']
         lastname = request.POST['lastname']
@@ -60,3 +55,15 @@ def register(request):
             return redirect('register')
     else:
         return render(request, 'accounts/register.html')
+
+
+@login_required(login_url='login')
+def dashboard(request):
+    return render(request, 'accounts/dash.html')
+
+@login_required(login_url='login')
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('login')
+    return redirect('login')
